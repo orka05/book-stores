@@ -3,21 +3,29 @@ import { useState, useEffect } from "react";
 import { BrownBook } from "../components/BrownBook";
 import { db } from "../config/firebase";
 import { Link } from "react-router-dom";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import style from "../style/main.module.css";
 
 export const Books = () => {
   const location = useLocation();
+  const navigate = useNavigate();
 
   const [bookList, setBookList] = useState([]);
   const [storeList, setStoreList] = useState([]);
 
-  const [searchTitle, setSearchTitle] = useState(String(location.state));
+  const [searchTitle, setSearchTitle] = useState("");
   const [searchAuthor, setSearchAuthor] = useState("");
   const [searchGenre, setSearchGenre] = useState("");
 
   const booksCollection = collection(db, "knjige");
   const storesCollection = collection(db, "knjizare");
+
+  useEffect(() => {
+    if (location.state) {
+      setSearchTitle(location.state); // uzmi vrednost
+      navigate("/books", { replace: true, state: null }); // odmah obriši state
+    }
+  }, [location.state, navigate]);
 
   useEffect(() => {
     const getBookList = async () => {
