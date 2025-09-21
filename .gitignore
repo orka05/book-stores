@@ -24,10 +24,11 @@ dist-ssr
 *.sw?
 
 # Ignore Firebase service account keys
-src/config/data2025.json
-src/firebase.js
-src/import.js
-src/config/serviceAccount.json
+
+# src/config/data2025.json
+# src/config/firebase.js
+# src/config/import.js
+# src/config/serviceAccount.json
 
 # Ignore environment files
 .env
