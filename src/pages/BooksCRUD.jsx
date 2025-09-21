@@ -161,6 +161,10 @@ export const BooksCRUD = () => {
   };
 
   const deleteBook = async (bookId, knjigeId) => {
+    const confirmed = window.confirm(
+      "Da li ste sigurni da želite da obrišete ovu knjigu?"
+    );
+    if (!confirmed) return;
     const bookDoc = doc(db, "knjige", knjigeId);
     await updateDoc(bookDoc, {
       [bookId]: deleteField(),

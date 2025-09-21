@@ -120,6 +120,10 @@ export const BookStoresCRUD = () => {
   };
 
   const deleteStore = async (id) => {
+    const confirmed = window.confirm(
+      "Da li ste sigurni da želite da obrišete ovu knjižaru?"
+    );
+    if (!confirmed) return;
     const storeDoc = doc(db, "knjizare", id);
     await deleteDoc(storeDoc);
     setCurrentAdresa("");
