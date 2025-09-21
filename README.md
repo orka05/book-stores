@@ -1,12 +1,24 @@
-# React + Vite
+Book Stores - React CRUD Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a React CRUD project developed at the Faculty of Technical Sciences, University of Novi Sad. 
+The application manages bookstores and the books available in those bookstores.
 
-Currently, two official plugins are available:
+How to run the project:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Clone the repository:
+   git clone <REPOSITORY_URL>
+   cd book-stores
+(or simply download and extract the zip file)
 
-## Expanding the ESLint configuration
+2. Install dependencies:
+   npm install
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+3. Start the application:
+   npm run dev
+
+4. The application will be available at:
+   http://localhost:5173
+
+Technologies used:
+- React
+- Vite (React bundler)
