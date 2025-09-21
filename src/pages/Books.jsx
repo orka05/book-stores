@@ -3,13 +3,16 @@ import { useState, useEffect } from "react";
 import { BrownBook } from "../components/BrownBook";
 import { db } from "../config/firebase";
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import style from "../style/main.module.css";
 
 export const Books = () => {
+  const location = useLocation();
+
   const [bookList, setBookList] = useState([]);
   const [storeList, setStoreList] = useState([]);
 
-  const [searchTitle, setSearchTitle] = useState("");
+  const [searchTitle, setSearchTitle] = useState(String(location.state));
   const [searchAuthor, setSearchAuthor] = useState("");
   const [searchGenre, setSearchGenre] = useState("");
 

@@ -1,22 +1,29 @@
 import { collection, getDocs } from "firebase/firestore";
 import { useState, useEffect } from "react";
 import { BrownBook } from "../components/BrownBook";
-import { useLocation } from "react-router-dom";
 import { db } from "../config/firebase";
 import { Link } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import style from "../style/main.module.css";
 
 export const BookStores = () => {
-  const location = useLocation();
-  const { storeId } = location.state || {};
-
   const [storeList, setStoreList] = useState([]);
-  const [selectedStoreId, setSelectedStoreId] = useState(storeId);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [selectedStoreId, setSelectedStoreId] = useState(
+    searchParams.get("storeId")
+  );
 
   const storesCollection = collection(db, "knjizare");
 
   const [bookList, setBookList] = useState([]);
   const booksCollection = collection(db, "knjige");
+
+  useEffect(() => {
+    const handleChangeStore = () => {
+      setSearchParams({ storeId: selectedStoreId });
+    };
+    handleChangeStore();
+  }, [selectedStoreId]);
 
   useEffect(() => {
     const getStoreList = async () => {
@@ -107,7 +114,7 @@ export const BookStores = () => {
                   <Link
                     to="/books"
                     key={book.id}
-                    state={{ bookId: book.id }}
+                    state={book.naziv}
                     className={style.designItem}
                   >
                     <h2>{book.naziv}</h2>

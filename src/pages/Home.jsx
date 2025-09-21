@@ -51,8 +51,10 @@ export const Home = () => {
         {filteredStores.map((store) => (
           <Link
             key={store.id}
-            to="/BookStores"
-            state={{ storeId: store.id }}
+            to={{
+              pathname: "/BookStores",
+              search: `?storeId=${store.id}`,
+            }}
             className={style.designItem}
           >
             <h1>{store.naziv}</h1>
