@@ -1,0 +1,33 @@
+.bg{
+    background-color: var(--brown);
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.7em;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--white);
+}
+.links{
+    display: flex;
+    gap: clamp(0.8em, 3.3vw, 4em);
+    padding: 0 5px;
+}
+.links svg{
+    transition: 0.5s;
+}
+.links svg:hover{
+    box-shadow: 2px 2px 4px var(--gray);
+    border-radius: 20%;
+    transition: 0.4s;
+}
+.hr{
+    height: 2px;
+    background-color: var(--gray);
+}
+.svg :hover{
+    background-color: red;
+}

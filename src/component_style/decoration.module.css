@@ -1,0 +1,19 @@
+#brownBook{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -10 !important;
+}
+.svg1{
+    width: clamp(180px, 33vw, 360px);
+}
+
+#blueBook{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -10 !important;
+}
+.reverse{
+    transform: scaleX(-1);
+}

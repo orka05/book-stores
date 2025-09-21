@@ -1,0 +1,28 @@
+.crudBody{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9vw;
+    flex-wrap: wrap;
+    margin: 1em;
+}
+.crudDiv{
+    width: clamp(210px, 70vw, 400px);
+    padding: 1em;
+    border-top: 1px solid #72727272;
+    border-bottom: 1px solid #72727272;
+    transition: 0.6s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+    height: clamp(270px, 20vw, 360px);
+    border-radius: 20px;
+    background-color: var(--white);
+}
+
+.crudDiv:hover{
+    box-shadow: 3px 3px 6px var(--gray);
+    transition: 0.4s;
+    background-color: var(--blue);
+}
